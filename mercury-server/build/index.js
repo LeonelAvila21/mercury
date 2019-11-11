@@ -1,2 +1,3 @@
 "use strict";
-console.log('Hola Mundo!');
+console.log(':: mercury-server');
+
