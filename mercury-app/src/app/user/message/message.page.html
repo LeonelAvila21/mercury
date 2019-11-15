@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>{{ contact }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Escribe tu mensaje..." [(ngModel)]="enviar_mensaje" id="send_message"></ion-input>
+    <ion-button slot="end" shape="round" fill="clear" (click)="sendMessage(enviar_mensaje)">Enviar</ion-button>
+  </ion-toolbar>
+</ion-footer>
