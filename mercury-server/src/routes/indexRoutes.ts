@@ -12,7 +12,8 @@ class IndexRoutes
 
     config() : void
     {
-        this.router.get('/', indexController.getUser);
+        this.router.get('/', indexController.listUsers);
+        this.router.get('/:id', indexController.getUser);
         this.router.post('/', indexController.addUser);
         this.router.delete('/:id', indexController.deleteUser);
         this.router.put('/:id', indexController.updateUser);

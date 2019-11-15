@@ -26,12 +26,20 @@ class IndexController {
     }
     getUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("SELECT COUNT(*) FROM (SELECT * FROM user_table WHERE u_username = ? AND u_password = ?) AS con", [req.body.u_username, req.body.u_password], function (err, rows) {
+            const { id } = req.params;
+            yield database_1.default.query("SELECT u_password FROM user_table WHERE u_username = ?", [id], function (err, rows) {
                 if (err)
                     throw err;
                 const list = rows;
                 res.json(rows);
             });
+            /*
+            await pool.query("SELECT COUNT(*) FROM (SELECT * FROM user_table WHERE u_username = ? AND u_password = ?) AS con", [req.body.u_username, req.body.u_password], function(err, rows){
+                if ( err ) throw err;
+                const list = rows;
+                res.json(rows);
+            });
+            */
         });
     }
     addUser(req, res) {

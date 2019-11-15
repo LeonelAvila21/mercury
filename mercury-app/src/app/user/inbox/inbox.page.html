@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><strong>Bienvenido {{ active_user }}</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>CONVERSACIONES RECIENTES</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let contact of contacts; let i = index" (click)="OpenMessage(i)">
+        <ion-avatar>
+          <img [src]="contact.avatar">
+        </ion-avatar>
+        <ion-label>
+          <h2 id="contact_name">{{ contact.name }}</h2>
+          <ion-note>{{ contact.last_chat }}</ion-note>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-text>
+</ion-content>
